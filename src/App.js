@@ -7,6 +7,7 @@ import {
   Route,
 } from "react-router-dom";
 import Homepage from './Screens/Homepage/Homepage';
+import Addtest from './Screens/Addtest/Addtest';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" component={Homepage} exact />
           <Route path="/signin" component={Login} exact />
           <Route path="/signup" component={Signup} exact />
+          <Route path="/addtest" component={Addtest} exact />
       </Router>
     </div>
   );

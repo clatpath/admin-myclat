@@ -1,0 +1,108 @@
+.addtestpage label {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 0.2rem;
+  margin-left: 0.1rem;
+}
+
+.addtestpage input {
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.addtestpage textarea {
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.mocksetname {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-width: 250px;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.mocksetnamefields {
+  display: flex;
+  flex-direction: column;
+}
+
+.mockcategory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 1rem 0;
+}
+
+.mockcategory label {
+  margin-right: 1rem;
+}
+
+.addtestpage select {
+  border: 1px solid rgb(211, 211, 211);
+  padding: 5px 2px;
+}
+
+.addquestion {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.addquestion label {
+  margin-top: 0.5rem;
+}
+
+.testBtnGrp {
+  width: 100%;
+  height: 50px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.testBtnGrp button {
+  min-width: 20%;
+  height: 80%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 250ms;
+  font-size: calc(8px + 1vw);
+  padding: 0 1rem;
+}
+
+.mocksetBtn {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 250ms;
+  font-size: calc(5px + 1vw);
+  padding: 0.5rem;
+  margin: 1rem;
+  border: 1px solid rgb(211, 211, 211);
+}
+
+.addquestionBtn {
+  background-color: #91c788;
+  font-weight: 600;
+}
+
+.addquestionBtn:hover {
+  background-color: #52734d;
+  color: #fff;
+}
+
+.resetfieldBtn {
+  font-weight: 600;
+}
+
+.resetfieldBtn:hover {
+  background-color: #f3f4ed;
+  border: 1px solid rgb(211, 211, 211);
+}
