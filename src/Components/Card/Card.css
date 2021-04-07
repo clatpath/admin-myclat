@@ -1,0 +1,35 @@
+.card {
+  width: 15rem;
+  padding: 1rem;
+  border: 1px solid rgb(211, 211, 211);
+}
+
+.cardHead {
+  padding: 1rem;
+  border-bottom: 1px solid rgb(211, 211, 211);
+  margin-bottom: 1rem;
+}
+.cardHead span {
+  font-size: 10px;
+}
+.cardBody {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.statusOnline {
+  width: 10px;
+  height: 10px;
+  background-color: greenyellow;
+  border-radius: 50%;
+  margin: 0.2rem 0.2rem 0 0;
+}
+
+.statusOfline {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  margin: 0.2rem 0.2rem 0 0;
+}

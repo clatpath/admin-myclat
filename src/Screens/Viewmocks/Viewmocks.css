@@ -1,0 +1,21 @@
+.mockpage {
+  margin: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.cardContainer {
+  width: max-content;
+  cursor: pointer;
+}
+
+.cardContainer:hover {
+  background-color: #edeef7;
+}
+
+@media only screen and (max-width: 750px) {
+  .mockpage {
+    place-items: center;
+  }
+}

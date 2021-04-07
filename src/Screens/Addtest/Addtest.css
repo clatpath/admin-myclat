@@ -50,6 +50,16 @@
 .addquestion {
   width: 80%;
   margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+.questionName {
+  display: flex;
+  flex-direction: column;
+}
+
+.questionOptions {
   display: flex;
   flex-direction: column;
 }
@@ -105,4 +115,16 @@
 .resetfieldBtn:hover {
   background-color: #f3f4ed;
   border: 1px solid rgb(211, 211, 211);
+}
+
+.showCounter {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .addquestion {
+    grid-template-columns: 1fr;
+  }
 }
