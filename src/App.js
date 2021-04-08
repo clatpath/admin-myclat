@@ -9,6 +9,7 @@ import {
 import Homepage from './Screens/Homepage/Homepage';
 import Addtest from './Screens/Addtest/Addtest';
 import Viewmocks from './Screens/Viewmocks/Viewmocks';
+import Mockdetails from './Screens/Mockdetails/Mockdetails';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/signup" component={Signup} exact />
           <Route path="/addtest" component={Addtest} exact />
           <Route path="/viewmocks" component={Viewmocks} exact />
+          <Route path="/viewmocks/:id" component={Mockdetails} exact />
       </Router>
     </div>
   );

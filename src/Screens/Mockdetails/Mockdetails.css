@@ -1,0 +1,123 @@
+.mockDetails {
+  width: 80%;
+  margin: auto;
+}
+
+.questioncategory {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.questioncategory select {
+  margin: 0 0 0 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 4px;
+}
+
+.questionsdetails {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.questionsection {
+  border: 1px solid rgb(211, 211, 211);
+  width: 90%;
+  padding: 1rem;
+}
+
+.options {
+  padding: 1rem;
+}
+
+.options p {
+  width: max-content;
+  background-color: #f3f4ed;
+  padding: 0.5rem;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 4px;
+}
+
+.options ul li {
+  list-style-type: none;
+  margin: 0.5rem 0;
+}
+
+.btnsection {
+  border: 1px solid rgb(211, 211, 211);
+  padding: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.numbersection {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  /* grid-template-columns: repeat(4, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+  gap: 5px;
+  padding: 0.5rem;
+}
+
+.numbersection span {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #f3f4ed;
+  transition: 250ms;
+}
+
+.numbersection span:hover {
+  background-color: #7868e6;
+  color: #fff;
+}
+
+.btnGrp {
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin: 1rem;
+}
+
+.btnGrp button {
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nextBtn {
+  padding: 5px 10px;
+  background-color: #7868e6;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: 250ms;
+}
+
+.nextBtn:hover {
+  border: 1px solid #7868e6;
+  background-color: #fff;
+  color: black;
+}
+
+.prevBtn {
+  padding: 5px 10px;
+  background-color: #f3f4ed;
+  border: 1px solid #fff;
+  transition: 250ms;
+  color: black;
+}
+
+.prevBtn:hover {
+  border: 1px solid rgb(211, 211, 211);
+}

@@ -20,13 +20,13 @@
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   margin-right: calc(10px + 1vw);
+  font-weight: 600;
 }
 
-.navLinks a {
-  text-decoration: none;
-  font-weight: 600;
+.navLinks * {
   border-radius: 4px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .signinBtn {

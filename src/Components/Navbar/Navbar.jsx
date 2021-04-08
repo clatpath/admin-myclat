@@ -10,11 +10,11 @@ const Navbar = () => {
                 <h2>Myclat DashBoard</h2>
             </div>
             <div className="navLinks">
-                <Link to="/signin">
-                    <a className="signinBtn">Sign in</a>
+                <Link to="/signin" className="signinBtn">
+                    Sign in
                 </Link>
-                <Link to="/signup">
-                    <a className="signupBtn">Sign up</a>
+                <Link to="/signup" className="signupBtn">
+                    Sign up
                 </Link>
             </div>
         </div>

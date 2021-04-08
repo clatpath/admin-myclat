@@ -1,6 +1,6 @@
 import { LinearProgress, Snackbar } from '@material-ui/core';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Addtest.css";
 import MuiAlert from '@material-ui/lab/Alert';
 
@@ -12,26 +12,33 @@ const Addtest = () => {
     const [severitY , setSeveritY] = useState(null);
     const [mockSetToggle , setMockSetToggle] = useState(true)
     const [mockSetName , setMockSetName] = useState({name: "" , visibility: false});
+    const [mocksetId , setMocksetId] = useState(null);
     const [question , setQuestion] = useState({
         category : "",
+        questionPassage: "",
         questionName: "",
         questionOptionOne: "",
         questionOptionTwo: "",
         questionOptionThree: "",
         questionOptionFour: "",
         correctOption: "",
-        mockSetName: ""
+        mockSetId: ""
     })
     const proxy = "http://localhost:5000";
 
+    useEffect(() => {
+        setQuestion({...question, mockSetId: mocksetId})
+    },[mocksetId])
+
     const createMockSetHandler = () => {
         var mocksetname = mockSetName.name.toUpperCase()
-        setMockSetName({name: mocksetname, visibility:true})
+        setMockSetName({...mockSetName, name: mocksetname, visibility:true})
         setMockSetToggle(false)
         setLoading(true)
         try {
             axios.post(`${proxy}/myclat/admins/createmockset`, {mocksetname}).then((res) => {
                 setSnakbarMsg(res.data.message)
+                setMocksetId(res.data.newMocksetName._id)
                 setSeveritY("success")
                 setSnakbarOpen(true)
             }).catch(err => {
@@ -56,7 +63,7 @@ const Addtest = () => {
     const addQuestionHandler = () => {
         setLoading(true)
         // setQuestion({...question, mockSetName:mockSetName.name});
-        if(!question.category || !question.questionName || !question.questionOptionOne || !question.questionOptionThree || !question.questionOptionTwo || !question.questionOptionFour || !question.correctOption){
+        if(!question.category || !question.questionName || !question.questionPassage || !question.questionOptionOne || !question.questionOptionThree || !question.questionOptionTwo || !question.questionOptionFour || !question.correctOption){
             return  (
             setSnakbarMsg("Error! Please Fill all option"),
             setSeveritY("error"),
@@ -70,6 +77,13 @@ const Addtest = () => {
                 setSeveritY("success")
                 setSnakbarOpen(true)
                 setCounter(prev => prev + 1);
+                setQuestion({...question,
+                    questionName: "",
+                    questionOptionOne: "",
+                    questionOptionTwo: "",
+                    questionOptionThree: "",
+                    questionOptionFour: "",
+                    });
                 console.log(res)
             }).catch((err) => {
                 console.log(err)
@@ -85,6 +99,7 @@ const Addtest = () => {
 
     const resetHandler = () => {
         setQuestion({...question,
+        questionPassage: "",
         questionName: "",
         questionOptionOne: "",
         questionOptionTwo: "",
@@ -92,6 +107,7 @@ const Addtest = () => {
         questionOptionFour: "",
         })
     }
+
 
     return (
         <div className="addtestpage">
@@ -119,7 +135,7 @@ const Addtest = () => {
                 </div>
                 <div className="mockcategory">
                 <label htmlFor="mockCategory">Mock Category:-</label>
-                <select name="mockCategory" onChange={(e) => setQuestion({...question, category: e.target.value, mockSetName:mockSetName.name})}>
+                <select name="mockCategory" onChange={(e) => setQuestion({...question, category: e.target.value})}>
                 <option value="none" selected disabled hidden>
                     Select an Option
                     </option>
@@ -132,20 +148,22 @@ const Addtest = () => {
             </div>
             <div className="addquestion">
                 <div className="questionName">
+                    <label>Question Passage</label>
+                    <textarea rows="12" value={question.questionPassage} onChange={(e) => setQuestion({...question, questionPassage: e.target.value})}></textarea>
                     <label>Question Name</label>
-                    <textarea rows="15" value={question.questionName} onChange={(e) => setQuestion({...question, questionName: e.target.value, mockSetName:mockSetName.name})}></textarea>
+                    <input value={question.questionName} type="text" onChange={(e) => setQuestion({...question, questionName: e.target.value})} />
                 </div>
                 <div className="questionOptions">
                     <label>Option (a)</label>
-                    <input type="text" value={question.questionOptionOne} onChange={(e) => setQuestion({...question, questionOptionOne: e.target.value, mockSetName:mockSetName.name})} required/>
+                    <input type="text" value={question.questionOptionOne} onChange={(e) => setQuestion({...question, questionOptionOne: e.target.value})} required/>
                     <label>Option (b)</label>
-                    <input type="text" value={question.questionOptionTwo} onChange={(e) => setQuestion({...question, questionOptionTwo: e.target.value, mockSetName:mockSetName.name})} required/>
+                    <input type="text" value={question.questionOptionTwo} onChange={(e) => setQuestion({...question, questionOptionTwo: e.target.value})} required/>
                     <label>Option (c)</label>
-                    <input type="text" value={question.questionOptionThree} onChange={(e) => setQuestion({...question, questionOptionThree: e.target.value, mockSetName:mockSetName.name})} required/>
+                    <input type="text" value={question.questionOptionThree} onChange={(e) => setQuestion({...question, questionOptionThree: e.target.value})} required/>
                     <label>Option (d)</label>
-                    <input type="text" value={question.questionOptionFour} onChange={(e) => setQuestion({...question, questionOptionFour: e.target.value, mockSetName:mockSetName.name})} required/>
+                    <input type="text" value={question.questionOptionFour} onChange={(e) => setQuestion({...question, questionOptionFour: e.target.value})} required/>
                     <label htmlFor="correctoption">Correct Option</label>
-                    <select name="correctoption" onChange={(e) => setQuestion({...question, correctOption: e.target.value, mockSetName:mockSetName.name})}>
+                    <select name="correctoption" onChange={(e) => setQuestion({...question, correctOption: e.target.value})}>
                     <option value="none"  selected disabled hidden>
                         Select an Option
                         </option>
