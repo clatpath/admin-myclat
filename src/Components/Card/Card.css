@@ -12,6 +12,11 @@
 .cardHead span {
   font-size: 10px;
 }
+
+.cardHead h2 {
+  font-size: small;
+}
+
 .cardBody {
   display: flex;
   justify-content: flex-end;
