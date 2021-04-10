@@ -24,8 +24,8 @@ export const HomeData = [ {
 {
     id: "4",
     icon: <DiJqueryLogo size={25} />,
-    name:"Adress Queries",
-    path: "/adressqueries"
+    name:"Queries",
+    path: "/queries"
 },
 {
     id: "5",

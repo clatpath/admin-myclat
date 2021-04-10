@@ -1,6 +1,7 @@
 .mockDetails {
   width: 80%;
   margin: auto;
+  margin-bottom: 5rem;
 }
 
 .question {
@@ -11,6 +12,8 @@
   width: 550px;
   height: 150px;
   overflow-y: scroll;
+  border: 1px solid rgb(211, 211, 211);
+  padding: 5px 10px;
 }
 
 .questionpassage::-webkit-scrollbar {
@@ -173,4 +176,91 @@
 
 .ediBtn:hover {
   border: 1px solid rgb(211, 211, 211);
+}
+
+.addquestion {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+.questionName {
+  display: flex;
+  flex-direction: column;
+}
+
+.questionOptions {
+  display: flex;
+  flex-direction: column;
+}
+
+.addquestion label {
+  margin-top: 0.5rem;
+}
+
+.addquestion input {
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.addquestion select {
+  border: 1px solid rgb(211, 211, 211);
+  padding: 5px 2px;
+}
+
+.addquestion textarea {
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.questionUpdateBtnGrp {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  align-items: center;
+  height: 100px;
+}
+
+.questionUpdateBtnGrp button {
+  height: 45%;
+  width: 7%;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 250ms;
+  padding: 0 1rem;
+  font-size: 18px;
+}
+
+.updateCloseBtn {
+  transition: 250ms;
+  background-color: #c0c0c0;
+  border: 2px solid #fff;
+}
+.updateCloseBtn:hover {
+  border: 2px solid rgb(211, 211, 211);
+}
+
+.updateBtn {
+  background-color: #3f51b5;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.updateBtn:hover {
+  border: 2px solid rgb(211, 211, 211);
+}
+
+#closeUpdateIcon {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+@media only screen and (max-width: 500px) {
+  .addquestion {
+    grid-template-columns: 1fr;
+  }
 }
